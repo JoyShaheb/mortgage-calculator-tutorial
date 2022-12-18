@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
@@ -32,12 +32,16 @@ const Result = ({ data }) => {
   };
 
   return (
-    <div>
+    <Stack gap={3}>
       <Typography textAlign="center" variant="h5">
         Monthly Payment: $ {monthlyPayment.toFixed(2)}
       </Typography>
-      <Pie data={pieChartData} />;
-    </div>
+      <Stack direction="row" justifyContent="center">
+        <div>
+          <Pie data={pieChartData} />
+        </div>
+      </Stack>
+    </Stack>
   );
 };
 
